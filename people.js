@@ -4,7 +4,7 @@ let app = express();
 import dotenv from 'dotenv';
 dotenv.config();
 
-console.log(process.env.access_token)
+// console.log(process.env.access_token)
 
 const OAuth2Client = new google.auth.OAuth2(
   process.env.clientID,
@@ -22,6 +22,13 @@ const people = google.people({
   version: "v1",
   auth: OAuth2Client,
 });
+
+people.people.connections.list({
+  personFields: ["names", "phoneNumbers"]
+,
+  resourceName: "people/me",
+})
+.then(contacts=>console.log(contacts.data.connections.length))
 
 people.people
   .createContact({
