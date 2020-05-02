@@ -1,0 +1,19 @@
+{
+  "name": "peopleapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -r esm people.js",
+    "dev": "nodemon -r esm people.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "googleapis": "^49.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
